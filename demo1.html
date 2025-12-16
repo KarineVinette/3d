@@ -124,7 +124,18 @@ model-viewer {
   to   { transform: translateY(20%); }
 }
 
-
+/* ===== BACKGROUND PLAGE ===== */
+.viewer-frame.beach {
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.15),
+      rgba(0,0,0,0.35)
+    ),
+    url("plage.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 
 </style>
@@ -159,6 +170,7 @@ model-viewer {
   <button data-gradient="purple">Violet</button>
   <button data-gradient="peach">Pêche</button>
   <button data-gradient="snow">snow</button>
+    <button data-gradient="beach">Plage</button>
 
 
   
