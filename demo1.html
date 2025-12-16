@@ -138,6 +138,7 @@ model-viewer {
 }
 
 
+
 </style>
 </head>
 
@@ -149,6 +150,7 @@ model-viewer {
   <div id="frame" class="viewer-frame pink">
 
     <model-viewer
+        id="bottle3d"
       src="growthbottle.glb"
       camera-controls
       auto-rotate
@@ -192,6 +194,33 @@ buttons.forEach(btn => {
   });
 });
 
+
+</script>
+
+<script>
+const viewer = document.getElementById('bottle3d');
+
+function updateCamera() {
+  if (window.innerWidth <= 768) {
+    // MOBILE → plus loin
+    viewer.setAttribute(
+      'camera-orbit',
+      '0deg 75deg 30m'
+    );
+  } else {
+    // DESKTOP → plus proche
+    viewer.setAttribute(
+      'camera-orbit',
+      '0deg 75deg 10m'
+    );
+  }
+}
+
+// au chargement
+updateCamera();
+
+// au resize
+window.addEventListener('resize', updateCamera);
 </script>
 
 </body>
